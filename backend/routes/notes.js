@@ -57,7 +57,7 @@ router.put('/updatenote/:id', fetchuser, async (req, res)=>{
         let note = await Notes.findById(req.params.id);
         if(!note){return res.status(404).send("Not Found")}
 
-        if(note.user.toString() !== req.user.id){   //"note.user.toString()", This gives the Id of notes. 
+        if(note.user.toString() !== req.user.id){   //"note.user.toString()", This is that user which is in "Notes.js" model. "req.user.id", This is that user which is loged-in and extract from "authtoken" by using "fetchuser" function.
             return res.status(401).send("Note Allowed");
         }
 
