@@ -36,7 +36,7 @@ const Login = (props) => {
 
 
   return (
-    <div>
+    <div style={{height:"100vh"}}>
         <h2>Login to continue to iNotebook</h2>
       <form onSubmit={handleSubmit}>
             <div className="mb-3">
