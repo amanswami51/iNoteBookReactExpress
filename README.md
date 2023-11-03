@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# iNoteBook web app is created by using `React js`, `Express js`, `MongoDb` and `Bootstrap`. It is helpful for Adding, Reading, Updating, Deleting our notes on cloud.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Steps for Running this code in your leptop
+step1 : Create project directory, then open created directory in vs code.
 
-## Available Scripts
+stpe2 : Then, Open new terminal in vs code and paste [ `git clone https://github.com/amanswami51/iNoteBookReactExpress.git` ].
 
-In the project directory, you can run:
+step3 : Then, run [ `npm i` ] command in vs code terminal for installing frontend dependencies.
 
-### `npm start`
+step4 : Then, run [ `cd backend` ] command for going in `backend` folder i.e., for changing directory.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+step5 : Then, again run [ `npm i` ] command in vs code terminal for installing backend dependencies.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+step6 : run [ `cd ../` ] command for exiting from `backend` folder.
 
-### `npm test`
+step7 : Then run this command [ `npm run both` ] in terminal for the development mode.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then open browser and run this link `http://localhost:3000` to view it in your browser.\
+Then page looks like,
+<img width="939" alt="Screenshot 2023-11-03 215523" src="https://github.com/amanswami51/iNoteBookReactExpress/assets/126395625/48b99db2-8280-41a3-9105-a7c7a627a79e">
 
-### `npm run build`
+First of all create new account(signup) and Login in existing account. \
+Then add the notes through using input of title, description, tag. Then click on `Add Note` button. \
+Then an alert is shown on below of navbar, that is `success : Note Added Successfully`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Screenshot (470)](https://github.com/amanswami51/iNoteBookReactExpress/assets/126395625/5077a765-51ea-4f86-a808-797af3f4b83a)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then `Your Notes` shown below the add notes form. \
+Each notes contain title, tag, discription, Delete icon, Update icon. By These icons you can perform deletion and updation operation in your notes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="927" alt="Screenshot 2023-11-03 215923" src="https://github.com/amanswami51/iNoteBookReactExpress/assets/126395625/f26cd433-83a5-410b-8d7a-42993c3ca17d">
 
-### `npm run eject`
+You can see a dialog box in below image, that seen after click on update icon. By this dialog box you can perform updation operation.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<img width="929" alt="Screenshot 2023-11-03 215942" src="https://github.com/amanswami51/iNoteBookReactExpress/assets/126395625/105f4fcc-7bd2-4086-92dc-da545b55f9fe">
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can create this type of react web app by reading this documentation [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+For Nodejs, [Nodejs](https://www.youtube.com/watch?v=BSO9C8Z-YV8)
+
+For Express js, [Express](https://www.youtube.com/watch?v=teipbke8c4A)
+
+For mongoDb, [mongoDB](https://www.youtube.com/watch?v=AYDP1S5BbTo)
+
+For Bootstrap, [Bootstrap](https://getbootstrap.com/)
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
