@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-export default function Navbar() {
-  let location = useLocation();
+
+
+export default function Navbar(){
+
   let navigate = useNavigate();
+  let location = useLocation();
+
   const handleLogout = ()=>{
     localStorage.removeItem('token');
     navigate('/login')
   }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">

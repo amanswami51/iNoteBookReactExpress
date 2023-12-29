@@ -5,8 +5,8 @@ const Signup = (props) => {
     let navigate = useNavigate();
 
     //use to get value from input fields
-    const [text, setText] = useState({name:"", email:"", password:"", cpassword:""})
-    const onChange = (e)=>{
+    const [text, setText] = useState({name:"", email:"", password:""})
+    const handleOnChangefun = (e)=>{
         setText({...text, [e.target.name]: e.target.value})
     }
 
@@ -16,21 +16,17 @@ const Signup = (props) => {
         //API call
         const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
             method: 'POST',
-            headers:{
-                'content-Type': 'application/json'},
+            headers:{'content-Type': 'application/json'},
             body: JSON.stringify({name:text.name, email: text.email, password: text.password})
         });
         const json = await response.json();
-        console.log(json);
         if(json.success){
-            //save the auth token
-            localStorage.setItem('token', json.authtoken);
-            //redirect
-            navigate("/");
+            localStorage.setItem('token', json.authtoken);  //save the auth token in localstorage
+            navigate("/"); //redirect to home page
             props.showAlert("Account created successfully", "success");
         }
         else{
-           props.showAlert("Invalid credentials", "danger");
+           props.showAlert(json.error, "danger");
         }
     }
 
@@ -41,20 +37,15 @@ const Signup = (props) => {
         <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="name" className="form-label">Name</label>
-                <input type="text" onChange={onChange} className="form-control" id="name" name="name" aria-describedby="emailHelp" />
+                <input type="text" name="name" onChange={handleOnChangefun} className="form-control" id="name" aria-describedby="emailHelp" />
             </div>
             <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
-                <input type="email" onChange={onChange} className="form-control" id="email" name="email" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                <input type="email" name="email" onChange={handleOnChangefun} className="form-control" id="email" aria-describedby="emailHelp" />
             </div>
             <div className="mb-3">
                 <label htmlFor="password" className="form-label">Password</label>
-                <input type="password" onChange={onChange} className="form-control" id="password" name="password" minLength={3} required />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="cpassword" className="form-label">Confirm Password</label>
-                <input type="password" onChange={onChange} className="form-control" id="cpassword" name="cpassword" minLength={3} required />
+                <input type="password" name="password" onChange={handleOnChangefun} className="form-control" id="password" minLength={3} required />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>

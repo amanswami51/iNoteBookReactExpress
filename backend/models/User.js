@@ -20,6 +20,6 @@ const UserSchema = mongoose.Schema({
         default: Date.now
     }
 });
-const User = mongoose.model("user", UserSchema);
-// User.createIndexes(); //This ensure that their is no any duplicate value save in our database.
-module.exports = User;
+
+
+module.exports = mongoose.model("user", UserSchema);

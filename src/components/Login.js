@@ -17,36 +17,33 @@ const Login = (props) => {
         //API call
         const response = await fetch(`http://localhost:5000/api/auth/login`, {
             method: 'POST',
-            headers:{
-              'content-Type': 'application/json'},
+            headers:{'content-Type': 'application/json'},
             body: JSON.stringify({email: text.email, password: text.password})
         });
         const json = await response.json();
-        console.log(json);
+        
         if(json.success){
-            //save the auth token
-            localStorage.setItem('token', json.authtoken);
-            //redirect
+            localStorage.setItem('token', json.authtoken);  //save the auth token in localstorage
+            navigate("/");  //redirect to home page
             props.showAlert("Logged in successfully", "success");
-            navigate("/");
         }
         else{
-            props.showAlert("Invalid details", "danger");        }
+            props.showAlert(json.error, "danger");   
+        }
     }
 
 
   return (
-    <div style={{height:"100vh"}}>
+    <div className='container' style={{height:"100vh"}}>
         <h2>Login to continue to iNotebook</h2>
-      <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email address</label>
-                <input type="email" value={text.email} onChange={onChange} className="form-control" id="email" name="email" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                <input type="email" name="email" onChange={onChange} className="form-control" id="email" aria-describedby="emailHelp" />
             </div>
             <div className="mb-3">
                 <label htmlFor="password" className="form-label">Password</label>
-                <input type="password" value={text.password} onChange={onChange} className="form-control" id="password" name="password" />
+                <input type="password" name="password" onChange={onChange} className="form-control" id="password" />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>

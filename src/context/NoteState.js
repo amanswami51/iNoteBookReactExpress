@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import noteContext from "./noteContext";
+import React, { useState, createContext } from 'react';
 
+const noteContext = createContext();
 
 const NoteState = (props)=>{
     const host = "http://localhost:5000"
@@ -17,7 +17,7 @@ const NoteState = (props)=>{
         }
       });
       const json = await response.json();
-      setNotes(json); //store response in "notes state".
+      setNotes(json); //store response in "notes" array.
     }
 
     //*****************Add a Note*****************
@@ -89,3 +89,4 @@ const NoteState = (props)=>{
 }
 
 export default NoteState;
+export {noteContext};
